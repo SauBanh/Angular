@@ -19,3 +19,8 @@ create new project Angular
 ```terminal
 ng new your-name-project --no-strict --routing false --standalone false
 ```
+
+| Attribute Directives                                                           | Structural Directives                                                     |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| Look like a normal HTML Attribute (possibly with databinding or event binding) | Look like a nomal HTML Attribute but having a leading \* (for desugaring) |
+| Only affect/change the element they are added to                               | Affect a whole area in the DOM (elements get added/remove)                |
