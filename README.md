@@ -40,3 +40,12 @@ ng g s [name-service]
 | Only affect/change the element they are added to                               | Affect a whole area in the DOM (elements get added/remove)                |
 
 ![Alt text](image-1.png)
+
+| @               | Detail                                                                                         |
+| --------------- | ---------------------------------------------------------------------------------------------- |
+| @Input()        | Used to pass data into a component                                                             |
+| @Output()       | used to pass data out of that component                                                        |
+| @ViewChild()    | Used to get the parent element of the named element in ViewChild()                             |
+| @ContentChild() | Used to pass data inside that named element                                                    |
+| @Directive()    | Used when creating a directive, placing it on that element by name in the seletor and using it |
+| @Injectable     | Used when importing services to use together                                                   |
