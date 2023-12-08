@@ -102,3 +102,7 @@ export class AppComponent {
 ## rxjs
 
 https://www.learnrxjs.io/learn-rxjs/operators
+
+# Subjects
+
+![Alt text](image-3.png)
