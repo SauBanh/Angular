@@ -110,3 +110,6 @@ https://www.learnrxjs.io/learn-rxjs/operators
 ## Angular and form
 
 ![Alt text](image-4.png)
+
+https://angular.io/api/forms/Validators
+https://angular.io/api?type=directive
