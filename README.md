@@ -103,6 +103,10 @@ export class AppComponent {
 
 https://www.learnrxjs.io/learn-rxjs/operators
 
-# Subjects
+## Subjects
 
 ![Alt text](image-3.png)
+
+## Angular and form
+
+![Alt text](image-4.png)
