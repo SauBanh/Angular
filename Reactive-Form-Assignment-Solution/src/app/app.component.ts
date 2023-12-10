@@ -1,14 +1,28 @@
+import { CustomValidators } from './custom-validators';
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Reactive-Form-Assignment-Solution';
+  projectForm: FormGroup;
+
+  ngOnInit() {
+    this.projectForm = new FormGroup({
+      projectName: new FormControl(
+        null,
+        [Validators.required, CustomValidators.invalidProjectName],
+        CustomValidators.asyncInvalidProjectName
+      ),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      projectStatus: new FormControl('critical'),
+    });
+  }
+
+  onSaveProject() {
+    console.log(this.projectForm.value);
+  }
 }
