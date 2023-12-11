@@ -33,6 +33,10 @@ export class ShoppingListComponent {
     this.ingredients.push(ingredient);
   }
 
+  onEditItem(index: number) {
+    this.slService.startedEditing.next(index);
+  }
+
   onDestroy() {
     this.isChangeSub.unsubscribe();
   }
