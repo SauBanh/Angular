@@ -56,7 +56,7 @@ export class AppComponent {
         })
       )
       .subscribe((posts) => {
-        console.log(posts);
+        this.loadedPosts = posts;
       });
   }
 }
