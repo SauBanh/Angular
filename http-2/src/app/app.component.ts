@@ -16,11 +16,12 @@ export class AppComponent {
   constructor(private http: HttpClient, private postService: PostsService) {}
 
   ngOnInit() {
-    this.isFetching = true;
-    this.postService.fetchPosts().subscribe((posts) => {
-      this.isFetching = false;
-      this.loadedPosts = posts;
-    });
+    // this.isFetching = true;
+    // this.postService.fetchPosts().subscribe((posts) => {
+    //   this.isFetching = false;
+    //   this.loadedPosts = posts;
+    // });
+    this.onFetchPosts();
   }
 
   onCreatePost(postData: Post) {
