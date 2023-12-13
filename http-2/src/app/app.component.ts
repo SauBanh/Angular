@@ -51,6 +51,7 @@ export class AppComponent {
         this.loadedPosts = posts;
       },
       (error) => {
+        this.isFetching = false;
         this.error = error.message;
         console.log(error);
       }
@@ -62,6 +63,10 @@ export class AppComponent {
     this.postService.deletePosts().subscribe(() => {
       this.loadedPosts = [];
     });
+  }
+
+  onHandleError() {
+    this.error = null;
   }
 
   ngOnDestroy() {
