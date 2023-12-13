@@ -40,4 +40,10 @@ export class PostsService {
         })
       );
   }
+
+  deletePosts() {
+    return this.http.delete(
+      'https://review-angular-1eedb-default-rtdb.firebaseio.com/posts.json'
+    );
+  }
 }
