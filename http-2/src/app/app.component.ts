@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { map } from 'rxjs';
+import { Subscription, map } from 'rxjs';
+
 import { Post } from './post.module';
 import { PostsService } from './posts.service';
 
@@ -13,6 +14,7 @@ export class AppComponent {
   loadedPosts: Post[] = [];
   isFetching: boolean = false;
   error = null;
+  private errorSub: Subscription;
 
   constructor(private http: HttpClient, private postService: PostsService) {}
 
@@ -27,6 +29,11 @@ export class AppComponent {
     //     this.error = error.message;
     //   }
     // );
+    this.errorSub = this.postService.error.subscribe((errorMessage) => {
+      this.error = errorMessage;
+    });
+
+    this.isFetching = true;
     this.onFetchPosts();
   }
 
@@ -55,5 +62,9 @@ export class AppComponent {
     this.postService.deletePosts().subscribe(() => {
       this.loadedPosts = [];
     });
+  }
+
+  ngOnDestroy() {
+    this.errorSub.unsubscribe();
   }
 }
