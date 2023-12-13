@@ -10,6 +10,7 @@ import { Post } from './post.module';
 })
 export class AppComponent {
   loadedPosts: Post[] = [];
+  isFetching: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -40,6 +41,7 @@ export class AppComponent {
   }
 
   private fetchPosts() {
+    this.isFetching = true;
     this.http
       .get<{ [key: string]: Post }>(
         'https://review-angular-1eedb-default-rtdb.firebaseio.com/posts.json'
@@ -56,6 +58,7 @@ export class AppComponent {
         })
       )
       .subscribe((posts) => {
+        this.isFetching = false;
         this.loadedPosts = posts;
       });
   }
