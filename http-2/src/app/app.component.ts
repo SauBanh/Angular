@@ -9,7 +9,7 @@ import { Post } from './post.module';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  loadedPosts = [];
+  loadedPosts: Post[] = [];
 
   constructor(private http: HttpClient) {}
 
