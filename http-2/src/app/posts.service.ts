@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, catchError, map, throwError } from 'rxjs';
 
@@ -34,7 +34,12 @@ export class PostsService {
     //...
     return this.http
       .get<{ [key: string]: Post }>(
-        'https://review-angular-1eedb-default-rtdb.firebaseio.com/posts.json'
+        'https://review-angular-1eedb-default-rtdb.firebaseio.com/posts.json',
+        {
+          headers: new HttpHeaders({
+            'Custom-Header': 'HelloNguyenTuanAnhdeptrai',
+          }),
+        }
       )
       .pipe(
         map((responseData) => {
