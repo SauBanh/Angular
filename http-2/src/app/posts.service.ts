@@ -54,6 +54,7 @@ export class PostsService {
           }),
           // params: new HttpParams().set('print', 'pretty'),
           params: searchParams,
+          responseType: 'json',
         }
       )
       .pipe(
@@ -79,6 +80,7 @@ export class PostsService {
         'https://review-angular-1eedb-default-rtdb.firebaseio.com/posts.json',
         {
           observe: 'events',
+          responseType: 'text',
         }
       )
       .pipe(
